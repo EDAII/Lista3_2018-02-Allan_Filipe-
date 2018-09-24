@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados CSVs</title>
+    {% load static %}
+    <script type="text/javascript" src="{% static 'Trabalho03/javascript.js' %}"></script>
+    <!-- My CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'Trabalho03/style.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+</head>
+
+<body class="background-result">
+
+    <div class="container">
+        <h2 class="col-12" style="margin-top: 50px; color:white">Algorítmos n²</h2>
+        <div class="row py-5">
+        <div class="col-3">
+            <div class="card">
+                <div class="card-img-top text-center">
+                    <img src="{% static 'images/selection.gif' %}" style="height: 200px" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Selection Sort Time:</h5>
+                    <p class="card-text">{{ selection_sort_time }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="card">
+                <div class="card-img-top text-center">
+                    <img src="{% static 'images/insertion.gif' %}" style="height: 200px" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Insertion Sort Time:</h5>
+                    <p class="card-text">{{ insertion_sort_time }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="card">
+                <div class="card-img-top text-center">
+                        <img src="{% static 'images/bubble.gif' %}" style="height: 200px" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Bubble Sort Time:</h5>
+                    <p class="card-text">{{ bubble_sort_time }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="card">
+                <div class="card-img-top text-center">
+                        <img src="{% static 'images/shellsort.gif' %}" style="height: 200px" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Shell Sort Time:</h5>
+                    <p class="card-text">{{ shell_sort_time }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="col-12" style="margin-top: 50px; color:white">Algorítmos n Log n</h2>
+        <div class="row py-5">
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-img-top text-center">
+                    <img src="{% static 'images/quicksort.gif' %}" style="height: 200px" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Quick Sort Time:</h5>
+                    <p class="card-text">TIME HERE</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-img-top text-center">
+                    <img src="{% static 'images/count.gif' %}" style="height: 200px" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Count Sort Time:</h5>
+                    <p class="card-text">{{ count_sort_time }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-img-top text-center">
+                        <img src="{% static 'images/radix.gif' %}" style="height: 200px; width: 200px" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Radix Sort Time:</h5>
+                    <p class="card-text">{{ radix_sort_time }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="col-3">
+            <div class="card">
+                <div class="card-img-top text-center">
+                        <img src="" style="height: 200px" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Shell Sort Time:</h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+        <h2 class="col-12" style="margin-bottom: 50px; margin-top: 50px; color:white">Registros Ordenados</h2>
+
+        <table id="sortedData" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    {%for column_description in columns_descriptions %}
+                    <th bgcolor="white">{{ column_description }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {%for line in sorted_data %}
+                <tr>
+                    {%for column in line %}
+                        <td bgcolor="white"> {{ column }} </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    {%for column_description in columns_descriptions %}
+                    <th bgcolor="white">{{ column_description }}</th>
+                    {% endfor %}
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="row">
+            <div class="col-6 offset-3 py-5">
+                    <a href="{% url 'home' %}" class="btn btn-block btn-primary btn-lg" role="button">Return to Home</a>
+            </div>
+        </div>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#sortedData').DataTable(
+            {
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ],
+                bSort: false,
+                "lengthMenu": [[15, 25, 50, -1], [15, 25, 50, "All"]]
+            }
+        );
+    } );
+    </script>
+</body>
+
+</html>
