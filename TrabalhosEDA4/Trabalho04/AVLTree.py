@@ -1,7 +1,3 @@
-rotationlog = []
-displaylog = []
-
-
 class Node():
     def __init__(self, register):
         self.key = int(register[0])
@@ -11,6 +7,9 @@ class Node():
 
 
 class AVLTree():
+    rotationlog = []
+    displaylog = []
+
     def __init__(self, *args):
         self.node = None
         self.height = -1
@@ -79,7 +78,7 @@ class AVLTree():
 
     def rrotate(self):
         # Rotate left pivoting on self
-        rotationlog.append('Rotating the register: ' + str(self.node.register) + ' to right.')
+        AVLTree.rotationlog.append('Registro ->  ' + str(self.node.register) + '  rotacionado para DIREITA.')
         print('Rotating ' + str(self.node.key) + ' right')
         A = self.node
         B = self.node.left.node
@@ -91,7 +90,7 @@ class AVLTree():
 
     def lrotate(self):
         # Rotate left pivoting on self
-        rotationlog.append('Rotating the register: ' + str(self.node.register) + ' to left.')
+        AVLTree.rotationlog.append('Registro ->  ' + str(self.node.register) + '   rotacionado para ESQUERDA.')
         print('Rotating ' + str(self.node.key) + ' left')
         A = self.node
         B = self.node.right.node
@@ -130,8 +129,8 @@ class AVLTree():
         self.update_heights()  # Must update heights before balances
         self.update_balances()
         if self.node is not None:
-            displaylog.append("{} {} {} {} {}".format('-' * level * 2, pref, self.node.key, "[" + str(self.height) + ":" + str(self.balance) + "]", 'L' if self.is_leaf() else ' '))
-            print('-' * level * 2, pref, self.node.key, "[" + str(self.height) + ":" + str(self.balance) + "]", 'L' if self.is_leaf() else ' ')
+            AVLTree.displaylog.append("{} {} {} {} {}".format('-' * level * 2, pref, self.node.key, "[" + str(self.height) + ":" + str(self.balance) + "]", 'Leaf' if self.is_leaf() else ' '))
+            print('-' * level * 2, pref, self.node.key, "[" + str(self.height) + ":" + str(self.balance) + "]", 'Leaf' if self.is_leaf() else ' ')
             if self.node.left is not None:
                 self.node.left.display(level + 1, '<')
             if self.node.left is not None:

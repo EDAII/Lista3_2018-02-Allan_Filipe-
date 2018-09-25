@@ -1,5 +1,5 @@
 ## Lista 4 - Árvores Balanceadas
-### Sistema Armazenador de Registros ".csv" em Árvore
+### Sistema Armazenador de Registros ".csv" em Árvore Balanceada
 
 ##### Alunos
 
@@ -19,7 +19,7 @@ Após a execução abra o link do servidor em http://127.0.0.1:8000/.
 
 ##### Descrição
 
---
+Lê-se um arquivo ".csv" de registros, nos quais são armazenados em uma AVL, possibilitando a ordenação rápida pela trajetória em ordem da árvore. Ao final da execução, são mostradas as rotações realizadas, a árvore final e a lista ordenada de registros através da travessia da árvore.
 
 ##### Visualização
 
@@ -27,12 +27,12 @@ Para a visualização dos resultados foi utilizado o Framework Django da linguag
 
 ##### AVL
 
---
+São indicadas na tela as rotações necessárias para balancear a árvore nas inserções e o resultado final da árvore após a transcrição completa do ".csv" para estas. 
 
 ##### Vermelha e Preto
 
---
+Ainda não implementado.
 
 ##### Observações
 
-Seguem dois ".csv" de exemplo de entrada para a aplicação, um com mais registros e outro menor.
+Seguem dois ".csv" de exemplo de entrada para a aplicação, um com mais registros e outro com menos.
