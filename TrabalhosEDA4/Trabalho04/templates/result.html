@@ -5,120 +5,15 @@
   <meta charset="UTF-8">
   <title>Resultados CSVs</title>
     {% load static %}
-    <script type="text/javascript" src="{% static 'Trabalho03/javascript.js' %}"></script>
+    <script type="text/javascript" src="{% static 'Trabalho04/javascript.js' %}"></script>
     <!-- My CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'Trabalho03/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Trabalho04/style.css' %}">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 </head>
 
 <body class="background-result">
-
-    <div class="container">
-        <h2 class="col-12" style="margin-top: 50px; color:white">Algorítmos n²</h2>
-        <div class="row py-5">
-        <div class="col-3">
-            <div class="card">
-                <div class="card-img-top text-center">
-                    <img src="{% static 'images/selection.gif' %}" style="height: 200px" alt="Card image cap">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Selection Sort Time:</h5>
-                    <p class="card-text">{{ selection_sort_time }}</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-3">
-            <div class="card">
-                <div class="card-img-top text-center">
-                    <img src="{% static 'images/insertion.gif' %}" style="height: 200px" alt="Card image cap">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Insertion Sort Time:</h5>
-                    <p class="card-text">{{ insertion_sort_time }}</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-3">
-            <div class="card">
-                <div class="card-img-top text-center">
-                        <img src="{% static 'images/bubble.gif' %}" style="height: 200px" alt="Card image cap">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Bubble Sort Time:</h5>
-                    <p class="card-text">{{ bubble_sort_time }}</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-3">
-            <div class="card">
-                <div class="card-img-top text-center">
-                        <img src="{% static 'images/shellsort.gif' %}" style="height: 200px" alt="Card image cap">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Shell Sort Time:</h5>
-                    <p class="card-text">{{ shell_sort_time }}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <h2 class="col-12" style="margin-top: 50px; color:white">Algorítmos n Log n</h2>
-        <div class="row py-5">
-
-        <div class="col-4">
-            <div class="card">
-                <div class="card-img-top text-center">
-                    <img src="{% static 'images/quicksort.gif' %}" style="height: 200px" alt="Card image cap">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Quick Sort Time:</h5>
-                    <p class="card-text">TIME HERE</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-4">
-            <div class="card">
-                <div class="card-img-top text-center">
-                    <img src="{% static 'images/count.gif' %}" style="height: 200px" alt="Card image cap">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Count Sort Time:</h5>
-                    <p class="card-text">{{ count_sort_time }}</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-4">
-            <div class="card">
-                <div class="card-img-top text-center">
-                        <img src="{% static 'images/radix.gif' %}" style="height: 200px; width: 200px" alt="Card image cap">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Radix Sort Time:</h5>
-                    <p class="card-text">{{ radix_sort_time }}</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- <div class="col-3">
-            <div class="card">
-                <div class="card-img-top text-center">
-                        <img src="" style="height: 200px" alt="Card image cap">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Shell Sort Time:</h5>
-                    <p class="card-text"></p>
-                </div>
-            </div>
-        </div> -->
-    </div>
 
         <h2 class="col-12" style="margin-bottom: 50px; margin-top: 50px; color:white">Registros Ordenados</h2>
 
